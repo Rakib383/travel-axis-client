@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react"
 import { VisaCard } from "./VisaCard"
+import { Link } from "react-router-dom"
+import { FaArrowRight } from "react-icons/fa";
 
 export const LatestVisas = () => {
     const [latestVisas, setLatestVisas] = useState([])
@@ -22,6 +24,9 @@ export const LatestVisas = () => {
                     latestVisas.map(visa => <VisaCard visa={visa} key={visa.Countryname} />)
                 }
             </div>
+
+            <Link to="/allVisas" className="btn mt-12 bg-Pink hover:outline outline-Pink hover:text-black hover:bg-white text-white ">See All Visas <FaArrowRight /></Link>
+
         </div>
     )
 }

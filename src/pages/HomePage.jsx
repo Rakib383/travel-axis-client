@@ -1,3 +1,4 @@
+import { AboutUs } from "../components/AboutUs"
 import { Header } from "../components/Header"
 import { LatestVisas } from "../components/LatestVisas"
 
@@ -6,6 +7,7 @@ export const HomePage = () => {
         <div>
             <Header/>
             <LatestVisas/>
+            <AboutUs/>
         </div>
     )
 }

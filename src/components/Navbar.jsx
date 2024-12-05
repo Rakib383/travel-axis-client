@@ -4,6 +4,8 @@ import { IoMenu } from "react-icons/io5"
 import { CiLight } from "react-icons/ci";
 import { useState } from "react";
 import { MdDarkMode } from "react-icons/md";
+import 'react-tooltip/dist/react-tooltip.css'
+import { Tooltip } from 'react-tooltip'
 
 export const Navbar = () => {
 
@@ -18,7 +20,7 @@ export const Navbar = () => {
         htmlTag.classList.add('dark')
     }
     return (
-        <div className="navbar  max-w-7xl sm:px-5 md:pt-4 mx-auto mb-2">
+        <div className="navbar  max-w-7xl sm:px-5 md:pt-4 mx-auto mb-1">
             <div className="navbar-start ">
                 <div className="dropdown lg:hidden ">
                     <div tabIndex={0} role="button" className="btn pl-1 pr-0.5 btn-ghost lg:hidden hover:bg-white dark:hover:bg-black">
@@ -52,15 +54,31 @@ export const Navbar = () => {
                 </ul>
                 <div className="lg:hidden flex items-end">
                     <img className="w-12 sm:w-20" src={travelLogo} alt="" />
-                    <Link className="font-bold text-sm sm:text-lg text-sky-400 mr-3">Travel-Axis</Link>
+                    <Link className="font-bold text-sm sm:text-lg text-sky-500 mr-3">Travel-Axis</Link>
                 </div>
             </div>
+
 
             <div className="navbar-end">
 
                 {
-                    isLight ? <CiLight onClick={handleDarkMode} className="text-lg sm:text-2xl shrink-0 mx-1 mr-2 sm:mr-6 hover:cursor-pointer" /> : <MdDarkMode onClick={handleDarkMode} className="text-lg hover:cursor-pointer sm:text-2xl shrink-0 mx-1 mr-2 sm:mr-6 " />
+                    isLight ? <div><a className="tooltip"><CiLight onClick={handleDarkMode} className="text-lg sm:text-2xl shrink-0 mx-1 mr-2 sm:mr-6 hover:cursor-pointer" /></a>
+                        <Tooltip className="z-50" anchorSelect=".tooltip" place="top" offset={20}>
+                            Light
+                        </Tooltip>
+                    </div> : <div>
+                        <a className="tooltip2">
+                            <MdDarkMode onClick={handleDarkMode} className="text-lg hover:cursor-pointer sm:text-2xl shrink-0 mx-1 mr-2 sm:mr-6 " />
+                        </a>
+                        <Tooltip className="z-50" anchorSelect=".tooltip2" place="top" offset={20}>
+                            Dark
+                        </Tooltip>
+                    </div>
+
+                    
                 }
+
+
                 <div className="flex gap-2 sm:gap-4 items-center">
                     <Link className="px-3 py-2 bg-[#ff6392] text-white font-bold rounded-lg hover:text-[#ff6392] hover:outline outline-[#ff6392] hover:bg-white text-sm
                       ">
@@ -77,6 +95,7 @@ export const Navbar = () => {
                 </div>
 
             </div>
+
         </div>
     )
 }
