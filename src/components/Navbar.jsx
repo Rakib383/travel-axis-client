@@ -35,7 +35,7 @@ export const Navbar = () => {
 
                     </ul>
                 </div>
-                <div className="hidden lg:flex items-end">
+                <div className="hidden  lg:flex items-end">
                     <img className="w-20" src={travelLogo} alt="" />
                     <Link className="font-bold text-lg  text-sky-400  mr-5">Travel-Axis</Link>
                 </div>
