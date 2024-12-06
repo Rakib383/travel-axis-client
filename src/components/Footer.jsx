@@ -2,6 +2,9 @@ import logo from "../assets/images/logo.png"
 import { FaLocationDot } from "react-icons/fa6";
 import { TfiHeadphoneAlt } from "react-icons/tfi";
 import { FaRegMessage } from "react-icons/fa6";
+import { FaXTwitter } from "react-icons/fa6";
+import { FaLinkedin } from "react-icons/fa6";
+import { FaFacebook } from "react-icons/fa";
 export const Footer = () => {
     return (
         <div className="bg-base-200 dark:bg-black mt-20">
@@ -19,6 +22,12 @@ export const Footer = () => {
                         <p className="flex gap-1 "><FaLocationDot />Progati Sarani, Merul Badda, Dhaka 1212.</p>
                         <p className="flex gap-1 "><TfiHeadphoneAlt /> +(880)445-3694</p>
                         <p className="flex gap-1 "><FaRegMessage />TravelAxis@gmail.com</p>
+                        <div className="flex gap-2 items-center" >
+                            <p>Follow us:</p>
+                            <div className="flex text-lg gap-3">
+                                <FaXTwitter className="text-Pink cursor-pointer" /> <FaLinkedin className="text-Pink cursor-pointer"/> <FaFacebook className="text-Pink cursor-pointer" />
+                            </div>
+                        </div>
 
                     </div>
                 </div>
