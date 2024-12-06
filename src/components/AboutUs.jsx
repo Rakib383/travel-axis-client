@@ -12,7 +12,7 @@ export const AboutUs = () => {
 
     }, []);
     return (
-        <div className='text-center mt-10 '>
+        <div className='text-center mt-10 md:mt-16 '>
             <h3 className='font-bold text-lg mb-4 sm:text-xl  md:text-2xl '>Why choose us?</h3>
             <p className='px-4 sm:w-[490px] mx-auto'>From visa applications to tracking your status, TravelAxis is here to guide you every step of the way. Explore the world with confidence, knowing we’ve got you covered.</p>
             <div data-aos="fade-right">

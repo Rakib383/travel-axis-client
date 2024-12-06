@@ -15,7 +15,7 @@ export const LatestVisas = () => {
     return (
         <div className="text-center">
 
-            <h2 className="font-bold text-lg pt-5 md:text-xl italic ">Explore the Latest Visa Updates</h2>
+            <h2 className="font-bold text-lg pt-5 md:pt-10 md:text-xl italic ">Explore the Latest Visa Updates</h2>
             <h5 className=" text-gray-700 dark:text-white/70 px-8 mt-3 mb-10 md:mb-16 md:w-[480px] mx-auto ">Check out the latest visa announcements to ensure a smooth application process for your travel plans.</h5>
             {/* visa cards */}
 

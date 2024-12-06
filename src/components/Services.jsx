@@ -38,7 +38,7 @@ export const Services = () => {
                     <div className=''>
                         <div className="card bg-base-100 w-80 md:w-96 shadow-xl ">
                             <div className="card-body p-6 text-center">
-                                <h2 className="text-lg font-semibold ">Business Visa </h2>
+                                <h2 className="text-lg font-semibold dark:text-sky-400">Business Visa </h2>
                                 <p className='text-gray-600 '>Facilitates seamless entry for attending business meetings, conferences, or exploring investment opportunities abroad. <Link className=' text-Pink'>See Details....</Link></p>
                                
                             </div>
@@ -52,7 +52,7 @@ export const Services = () => {
                     <div>
                         <div className="card bg-base-100 w-80 md:w-96 shadow-xl ">
                             <div className="card-body p-6 text-center">
-                                <h2 className="text-lg  font-semibold ">Student Visa </h2>
+                                <h2 className="text-lg  font-semibold dark:text-sky-400 ">Student Visa </h2>
                                 <p className='text-gray-600 '>Empowers students to pursue educational opportunities at renowned institutions in foreign countries.<Link className=' text-Pink'>See Details....</Link></p>
                             </div>
                             <figure>
@@ -65,7 +65,7 @@ export const Services = () => {
                     <div>
                         <div className="card bg-base-100 w-80 md:w-96 shadow-xl ">
                             <div className="card-body p-6 text-center">
-                                <h2 className="text-lg font-semibold ">Work Visa</h2>
+                                <h2 className="text-lg font-semibold dark:text-sky-400">Work Visa</h2>
                                 <p className='text-gray-600 '>Provides authorization to work and contribute professionally in another country with legal employment rights.<Link className=' text-Pink'>See Details....</Link></p>
                             </div>
                             <figure>
@@ -78,7 +78,7 @@ export const Services = () => {
                     <div>
                         <div className="card bg-base-100 w-80 md:w-96 shadow-xl ">
                             <div className="card-body p-6 text-center">
-                                <h2 className="text-lg font-semibold ">Tourist Visa</h2>
+                                <h2 className="text-lg font-semibold dark:text-sky-400">Tourist Visa</h2>
                                 <p className='text-gray-600 '>Allows travelers to explore and experience the culture, landmarks, and attractions of their desired destination.<Link className=' text-Pink'>See Details....</Link></p>
                             </div>
                             <figure>
@@ -91,7 +91,7 @@ export const Services = () => {
                     <div>
                         <div className="card bg-base-100 w-80 md:w-96 shadow-xl ">
                             <div className="card-body p-6 text-center">
-                                <h2 className="text-lg font-semibold ">Medical Visa</h2>
+                                <h2 className="text-lg font-semibold dark:text-sky-400">Medical Visa</h2>
                                 <p className='text-gray-600 '>Enables individuals to access advanced medical treatments and healthcare facilities in foreign countries.<Link className=' text-Pink'>See Details....</Link></p>
                             </div>
                             <figure>
