@@ -3,6 +3,7 @@ import { RootLayout } from "../Layouts/RootLayout";
 import { HomePage } from "../pages/HomePage";
 import { LoginPage } from "../pages/LoginPage";
 import { Register } from "../pages/Register";
+import 'react-toastify/dist/ReactToastify.css';
 
 const router = createBrowserRouter([
     {

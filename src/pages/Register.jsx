@@ -28,6 +28,7 @@ export const Register = () => {
         const photo = e.target.photo.value
         const email = e.target.email.value
         const password = e.target.password.value
+        const newUser = { name, email }
         if (!passwordRegex.test(password)) {
 
             return setError("Password must have at least one uppercase letter, one lowercase letter, and be at least 6 characters long.")
@@ -37,8 +38,19 @@ export const Register = () => {
             .then((result) => {
                 updateUserProfile({ displayName: name, photoURL: photo })
                     .then(() => {
-                        setUser(result.user)
-                        console.log(result.user)
+                        setUser(result.user);
+                        fetch("http://localhost:5000/users", {
+                            method: 'POST',
+                            headers: {
+                                'content-type': 'application/json'
+                            },
+                            body: JSON.stringify(newUser)
+                        })
+                            .then(res => res.json())
+                            .then(data => {
+                                console.log(data)
+                            })
+
                         navigate("/")
                     })
                     .catch(error => {
@@ -51,12 +63,30 @@ export const Register = () => {
                 console.log(error)
             })
     }
+
     const handleSignInWithGoogle = () => {
         signInWithGoogle()
             .then((result) => {
 
                 const user = result.user;
                 setUser(user);
+
+
+                const email = user.email
+                const displayName = user.displayName
+                const newUser = {email,displayName}
+                fetch("http://localhost:5000/users", {
+                    method: 'POST',
+                    headers: {
+                        'content-type': 'application/json'
+                    },
+                    body: JSON.stringify(newUser)
+                })
+                    .then(res => res.json())
+                    .then(data => {
+                        console.log(data)
+                    })
+                
                 navigate("/")
 
             })
@@ -65,10 +95,10 @@ export const Register = () => {
             })
     }
     return (
-        <div className="flex flex-col justify-center items-center mt-8 md:mt-12">
+        <div className="flex flex-col justify-center items-center mt-8 md:mt-12 ">
 
-            <h2 className="text-xl font-bold text-sky-400 mb-8 w-64 text-center font-Charm">Create Your Account & Get Started Today!</h2>
-            <div className="md:flex items-center gap-16 lg:gap-20  ">
+            <h2 className="text-xl font-bold text-sky-400 mb-8 w-64 text-center ">Create Your Account & Get Started Today!</h2>
+            <div className="md:flex items-center gap-16 lg:gap-20 md:mr-10 ">
 
                 {/* register image */}
                 <div>
