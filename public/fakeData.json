@@ -15,7 +15,7 @@
     ],
     "Description": "A visa for tourism purposes to visit the United States.",
     "Age_restriction": "None",
-    "Fee": "$460",
+    "Fee": "460",
     "Validity": "6 months",
     "Application_method": "Online"
     },
@@ -34,7 +34,7 @@
     ],
     "Description": "A visa for students intending to study in Canada.",
     "Age_restriction": "18 and above",
-    "Fee": "$550",
+    "Fee": "550",
     "Validity": " 90 days",
     "Application_method": "Online and in-person"
     },
@@ -53,7 +53,7 @@
     ],
     "Description": "A visa for individuals working in the Morocco.",
     "Age_restriction": "18 and above",
-    "Fee": "£610",
+    "Fee": "610",
     "Validity": "2 years",
     "Application_method": "Online"
     },
@@ -73,7 +73,7 @@
     ],
     "Description": "A visa for short-term visits to Australia.",
     "Age_restriction": "None",
-    "Fee": "AUD 745",
+    "Fee": "745",
     "Validity": "3 months",
     "Application_method": "Online"
     },
@@ -91,7 +91,7 @@
     ],
     "Description": "A visa for conducting business in India.",
     "Age_restriction": "18 and above",
-    "Fee": "$300",
+    "Fee": "300",
     "Validity": "1 year",
     "Application_method": "Online"
     },
@@ -110,7 +110,7 @@
     ],
     "Description": "A visa for tourism purposes in Japan.",
     "Age_restriction": "None",
-    "Fee": "$410",
+    "Fee": "410",
     "Validity": "90 days",
     "Application_method": "In-person"
     }
