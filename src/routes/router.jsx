@@ -7,6 +7,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import { AddVisaPage } from "../pages/AddVisaPage";
 import { AllVisasPage } from "../pages/AllVisasPage";
 import { VisaDetailsPage } from "../pages/VisaDetailsPage";
+import { MyVisaPage } from "../pages/MyVisaPage";
 
 const router = createBrowserRouter([
     {
@@ -38,6 +39,10 @@ const router = createBrowserRouter([
                 path:"visas/:id",
                 element:<VisaDetailsPage/>,
                 loader: ({params}) => fetch(`http://localhost:5000/visas/${params.id}`)
+            },
+            {
+                path:"myAppliedVisas",
+                element:<MyVisaPage/> 
             },
 
 

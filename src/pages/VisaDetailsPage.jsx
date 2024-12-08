@@ -45,7 +45,7 @@ export const VisaDetailsPage = () => {
                 Swal.fire({
                     position: "center",
                     icon: "success",
-                    title: "Visa added successfully",
+                    title: "Application successfull",
                     showConfirmButton: true,
 
                 }).then(result => {
@@ -73,7 +73,7 @@ export const VisaDetailsPage = () => {
         <div className="space-y-2 text-center px-3">
             <h1 className="font-black mt-7 text-sky-400 sm:text-lg">Comprehensive Visa Information</h1>
             <p className="px-4 text-gray-600 dark:text-gray-400 pt-1 text-[15px] sm:w-[420px] mx-auto pb-6">Get a complete overview of the requirements, validity, and application process for this visa.</p>
-
+                        {/* visa details card */}
             <div className="card bg-base-100 w-[320px] sm:w-[380px] shadow-xl dark:text-black  mx-auto" >
                 <div className="card-body p-6">
                     <img src={Countryimage} className="w-16 mx-auto" alt="" />
@@ -116,7 +116,7 @@ export const VisaDetailsPage = () => {
                 </div>
             </div>
 
-
+                                {/* apply visa modal */}
             <dialog id="apply_modal" className="modal  modal-bottom sm:modal-middle">
                 <form onSubmit={handleApplyVisa} className="modal-box w-[320px] bg-white mx-auto mt-12 sm:w-[440px] text-start ">
                     <h2 className="text-Pink text-xl  mt-6 md:text-2xl text-center mb-8 sm:mb-12 font-bold underline underline-offset-8 ">Visa Application Form</h2>
@@ -148,9 +148,6 @@ export const VisaDetailsPage = () => {
                     <button onClick={() => document.getElementById('apply_modal').close()} id="closeModal" type="submit" className="text-white bg-Pink    focus:ring-blue-300  rounded-lg text-sm w-full  px-5 py-2.5 text-center dark:bg-Pink hover:bg-white hover:outline  outline-Pink hover:text-black dark:hover:bg-white font-bold">Apply</button>
                 </form>
             </dialog>
-
-
-
 
         </div>
     )
