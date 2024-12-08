@@ -9,6 +9,8 @@ import { AllVisasPage } from "../pages/AllVisasPage";
 import { VisaDetailsPage } from "../pages/VisaDetailsPage";
 import { MyVisaPage } from "../pages/MyVisaPage";
 import { MyAddedVisas } from "../pages/MyAddedVisas";
+import { PrivateRoute } from "./PrivateRoute";
+import { ErrorPage } from "../pages/ErrorPage";
 
 const router = createBrowserRouter([
     {
@@ -29,31 +31,36 @@ const router = createBrowserRouter([
             },
             {
                 path:"addVisa",
-                element:<AddVisaPage/>
+                element:<PrivateRoute><AddVisaPage/></PrivateRoute>
             },
             {
                 path:"allVisas",
-                element:<AllVisasPage/>,
+                element:<PrivateRoute><AllVisasPage/></PrivateRoute>,
                 loader: () => fetch("http://localhost:5000/allVisas")
             },
             {
                 path:"visas/:id",
-                element:<VisaDetailsPage/>,
+                element:<PrivateRoute><VisaDetailsPage/></PrivateRoute>,
                 loader: ({params}) => fetch(`http://localhost:5000/visas/${params.id}`)
             },
             {
                 path:"myAppliedVisas",
-                element:<MyVisaPage/> 
+                element:<PrivateRoute><MyVisaPage/></PrivateRoute> 
             },
             {
                 path:"myAddedVisas",
-                element:<MyAddedVisas/> 
+                element:<PrivateRoute><MyAddedVisas/></PrivateRoute> 
             },
 
 
         ]
 
+    },
+    {
+        path:"*",
+        element:<ErrorPage/>
     }
+
 ])
 
 export default router

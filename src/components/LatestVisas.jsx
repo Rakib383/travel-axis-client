@@ -6,7 +6,7 @@ import { FaArrowRight } from "react-icons/fa";
 export const LatestVisas = () => {
     const [latestVisas, setLatestVisas] = useState([])
     useEffect(() => {
-        fetch('./fakeData.json')
+        fetch('http://localhost:5000/allVisas')
             .then(res => res.json())
             .then(data => setLatestVisas(data))
 

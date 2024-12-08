@@ -1,5 +1,5 @@
 import { useContext, useState } from "react"
-import { Link, useNavigate } from "react-router-dom"
+import { Link, useLocation, useNavigate } from "react-router-dom"
 import register from "../assets/images/register.svg"
 import { AuthContext } from "../provider/AuthProvider"
 import { toast, ToastContainer } from "react-toastify"
@@ -7,6 +7,7 @@ import 'react-toastify/dist/ReactToastify.css';
 
 export const Register = () => {
     const [error, setError] = useState(null)
+    const location = useLocation()
     const navigate = useNavigate()
     const { createUser, updateUserProfile, setUser, signInWithGoogle } = useContext(AuthContext)
     const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z]).{6,}$/;
@@ -51,7 +52,7 @@ export const Register = () => {
                                 console.log(data)
                             })
 
-                        navigate("/")
+                            navigate(location?.state ? location.state : "/")
                     })
                     .catch(error => {
                         console.log(error)
@@ -87,7 +88,7 @@ export const Register = () => {
                         console.log(data)
                     })
                 
-                navigate("/")
+                    navigate(location?.state ? location.state : "/")
 
             })
             .catch((error) => {

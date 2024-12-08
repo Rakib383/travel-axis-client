@@ -1,11 +1,12 @@
 import { useContext } from "react"
 import { AuthContext } from "../provider/AuthProvider"
 import { toast, ToastContainer } from "react-toastify"
-import { Link, useNavigate } from "react-router-dom"
+import { Link, useLocation, useNavigate } from "react-router-dom"
 
 export const LoginPage = () => {
     const {userLogin,setUser,signInWithGoogle} = useContext(AuthContext)
     const navigate = useNavigate()
+    const location = useLocation()
 
     const notify = () => {
         toast.error('Invalid credentials!', {
@@ -30,7 +31,7 @@ export const LoginPage = () => {
             .then(result => {
                 const user = result.user;
                 setUser(user);
-                navigate("/")
+                navigate(location?.state ? location.state : "/")
                 form.reset();
 
             })
@@ -48,7 +49,7 @@ export const LoginPage = () => {
                 const user = result.user;
                 setUser(user);
                
-                navigate("/")
+                navigate(location?.state ? location.state : "/")
 
             })
             .catch((error) => {
