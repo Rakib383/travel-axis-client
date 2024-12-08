@@ -36,7 +36,7 @@ export const Card = ({ visa }) => {
 
                     </div>
 
-                <Link to={`/visa/${_id}`} className="btn mt-2 bg-Pink text-white hover:outline outline-Pink hover:text-black hover:bg-white">See Details</Link>
+                <Link to={`/visas/${_id}`} className="btn mt-2 bg-Pink text-white hover:outline outline-Pink hover:text-black hover:bg-white">See Details</Link>
             </div>
         </div>
     )
