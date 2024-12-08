@@ -51,8 +51,8 @@ export const ApplicationCard = ({ visa }) => {
 
     }
     return (
-        <div>
-            <div className="card bg-base-100 w-[340px] sm:w-[360px] shadow-xl dark:text-black  mx-auto" >
+        
+            <div className="card bg-base-100 w-[340px] sm:w-[360px] shadow-xl dark:text-black  " >
                 <div className="card-body p-6">
                     <img src={Countryimage} className="w-16 mx-auto mb-2" alt="" />
                     <div className="flex text-sm font-bold justify-start flex-nowrap gap-2 items-start " >
@@ -105,6 +105,6 @@ export const ApplicationCard = ({ visa }) => {
                     <button onClick={() => handleVisaDelete(_id)} className="btn mt-2 bg-Pink text-white hover:outline outline-Pink hover:text-black hover:bg-white">Cancel</button>
                 </div>
             </div>
-        </div>
+        
     )
 }

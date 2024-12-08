@@ -2,7 +2,6 @@ import { FaFlag } from "react-icons/fa";
 import { FaPassport } from "react-icons/fa";
 import { FaDollarSign } from "react-icons/fa";
 import { IoMdTime } from "react-icons/io";
-import { GrValidate } from "react-icons/gr";
 import { Link } from "react-router-dom";
 
 export const Card = ({ visa }) => {
