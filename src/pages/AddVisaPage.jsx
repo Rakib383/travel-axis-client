@@ -88,7 +88,7 @@ export const AddVisaPage = () => {
                 </div>
                 <div>
                     <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Visa Type</label>
-                    <select onChange={handleVisaTypeChange} className="select select-bordered w-full h-[42px]  min-h-[42px] dark:bg-gray-700">
+                    <select required onChange={handleVisaTypeChange} className="select select-bordered w-full h-[42px]  min-h-[42px] dark:bg-gray-700">
 
                         <option value="" hidden>
                             Select

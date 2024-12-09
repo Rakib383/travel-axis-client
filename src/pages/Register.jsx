@@ -40,7 +40,7 @@ export const Register = () => {
                 updateUserProfile({ displayName: name, photoURL: photo })
                     .then(() => {
                         setUser(result.user);
-                        fetch("http://localhost:5000/users", {
+                        fetch("http://localhost:5000/newUser", {
                             method: 'POST',
                             headers: {
                                 'content-type': 'application/json'
@@ -76,7 +76,7 @@ export const Register = () => {
                 const email = user.email
                 const displayName = user.displayName
                 const newUser = {email,displayName}
-                fetch("http://localhost:5000/users", {
+                fetch("http://localhost:5000/newUser", {
                     method: 'POST',
                     headers: {
                         'content-type': 'application/json'

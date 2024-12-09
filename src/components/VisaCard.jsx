@@ -4,9 +4,10 @@ import { FaDollarSign } from "react-icons/fa";
 import { IoMdTime } from "react-icons/io";
 import { GrValidate } from "react-icons/gr";
 import { Link } from "react-router-dom";
+import { FcProcess } from "react-icons/fc";
 
 export const VisaCard = ({ visa }) => {
-    const { Countryname, Countryimage, Visa_type, Processing_time, Fee, Validity, Application_method, icon_img } = visa
+    const { Countryname, Countryimage, Visa_type, Processing_time, Fee, Validity, Application_method, icon_img,_id } = visa
     return (
         <div className="card bg-base-100 w-[320px] shadow-xl dark:text-black mx-1">
             <div className="relative  ">
@@ -19,7 +20,7 @@ export const VisaCard = ({ visa }) => {
                 </div>
             </div>
             <div className="card-body p-6">
-                <img src={Countryimage} className="w-16 mx-auto" alt="" />
+                <img src={Countryimage} className="w-16 h-8 mx-auto" alt="" />
 
                 <h2 className="flex items-start ">
                     <FaFlag className="text-sm  mr-2" />
@@ -30,19 +31,18 @@ export const VisaCard = ({ visa }) => {
                     <p className="flex items-center " ><FaPassport className="mr-2" />Visa type: {Visa_type}</p>
                     <p className="flex items-center " ><FaDollarSign />Fee: {Fee}</p>
                 </div>
-                <div className="text-sm  flex shrink-0 flex-wrap">
-                    <p className="flex items-center " ><IoMdTime className="mr-2" />Processing Time:  {Processing_time}</p>
+                
+                    <p className="flex text-sm items-center " ><IoMdTime className="mr-2" />Processing Time:  {Processing_time}</p>
 
-                </div>
-                <div className="text-sm  flex shrink-0 flex-wrap">
+              
 
-                    <p className="flex items-center " >Application Method: {Application_method}</p>                   
+                    <p className="flex text-sm items-center " ><FcProcess className="mr-2" />Application Method: {Application_method}</p>                   
 
-                </div>
+              
 
                 <p className="flex items-center text-sm " ><GrValidate className="mr-2" />Validity: {Validity}</p>
 
-                <Link className="btn mt-2 bg-Pink text-white hover:outline outline-Pink hover:text-black hover:bg-white">See Details</Link>
+                <Link to={`visas/${_id}`} className="btn mt-2 bg-Pink text-white hover:outline outline-Pink hover:text-black hover:bg-white">See Details</Link>
             </div>
         </div>
     )

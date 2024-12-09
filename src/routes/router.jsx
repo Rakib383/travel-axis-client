@@ -7,49 +7,49 @@ import 'react-toastify/dist/ReactToastify.css';
 import { AddVisaPage } from "../pages/AddVisaPage";
 import { AllVisasPage } from "../pages/AllVisasPage";
 import { VisaDetailsPage } from "../pages/VisaDetailsPage";
-import { MyVisaPage } from "../pages/MyVisaPage";
+import { MyVisaApplicationPage } from "../pages/MyVisaApplicationPage";
 import { MyAddedVisas } from "../pages/MyAddedVisas";
 import { PrivateRoute } from "./PrivateRoute";
 import { ErrorPage } from "../pages/ErrorPage";
 
 const router = createBrowserRouter([
     {
-        path:"/",
-        element:<RootLayout/>,
-        children:[
+        path: "/",
+        element: <RootLayout />,
+        children: [
             {
-                path:"",
-                element:<HomePage/>
+                path: "",
+                element: <HomePage />
             },
             {
-                path:"login",
-                element:<LoginPage/>
+                path: "login",
+                element: <LoginPage />
             },
             {
-                path:"register",
-                element:<Register/>
+                path: "register",
+                element: <Register />
             },
             {
-                path:"addVisa",
-                element:<PrivateRoute><AddVisaPage/></PrivateRoute>
+                path: "addVisa",
+                element: <PrivateRoute><AddVisaPage /></PrivateRoute>
             },
             {
-                path:"allVisas",
-                element:<PrivateRoute><AllVisasPage/></PrivateRoute>,
+                path: "allVisas",
+                element: <PrivateRoute><AllVisasPage /></PrivateRoute>,
                 loader: () => fetch("http://localhost:5000/allVisas")
             },
             {
-                path:"visas/:id",
-                element:<PrivateRoute><VisaDetailsPage/></PrivateRoute>,
-                loader: ({params}) => fetch(`http://localhost:5000/visas/${params.id}`)
+                path: "visas/:id",
+                element: <PrivateRoute><VisaDetailsPage /></PrivateRoute>,
+                loader: ({ params }) => fetch(`http://localhost:5000/visas/${params.id}`)
             },
             {
-                path:"myAppliedVisas",
-                element:<PrivateRoute><MyVisaPage/></PrivateRoute> 
+                path: "myAppliedVisas",
+                element: <PrivateRoute><MyVisaApplicationPage /></PrivateRoute>
             },
             {
-                path:"myAddedVisas",
-                element:<PrivateRoute><MyAddedVisas/></PrivateRoute> 
+                path: "myAddedVisas",
+                element: <PrivateRoute><MyAddedVisas /></PrivateRoute>
             },
 
 
@@ -57,8 +57,8 @@ const router = createBrowserRouter([
 
     },
     {
-        path:"*",
-        element:<ErrorPage/>
+        path: "*",
+        element: <ErrorPage />
     }
 
 ])
