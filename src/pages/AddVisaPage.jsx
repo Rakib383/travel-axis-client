@@ -49,7 +49,7 @@ export const AddVisaPage = () => {
 
         const newVisa = { Countryname, Countryimage, icon_img, Visa_type, Processing_time, Required_documents, Description, Age_restriction, Fee, Validity, Application_method, visaCreator }
 
-        fetch("http://localhost:5000/addVisa", {
+        fetch("https://travel-axis-server.vercel.app/addVisa", {
             method: "POST",
             headers: {
                 "content-type": "application/json"

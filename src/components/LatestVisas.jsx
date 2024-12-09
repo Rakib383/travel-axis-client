@@ -6,7 +6,7 @@ import { FaArrowRight } from "react-icons/fa";
 export const LatestVisas = () => {
     const [latestVisas, setLatestVisas] = useState([])
     useEffect(() => {
-        fetch('http://localhost:5000/allVisas')
+        fetch('https://travel-axis-server.vercel.app/allVisas')
             .then(res => res.json())
             .then(data => setLatestVisas(data))
 

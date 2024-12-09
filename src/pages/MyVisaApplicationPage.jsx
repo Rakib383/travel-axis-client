@@ -11,7 +11,7 @@ export const MyVisaApplicationPage = () => {
 
 
     useEffect(() => {
-        fetch('http://localhost:5000/myAppliedVisas', {
+        fetch('https://travel-axis-server.vercel.app/myAppliedVisas', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -20,13 +20,14 @@ export const MyVisaApplicationPage = () => {
         })
             .then(res => res.json())
             .then(data => {
-                setFilteredVisas(data)
+
                 setAllAppliedVisas(data)
+                setFilteredVisas(data)
             })
 
 
 
-    }, [])
+    }, [allAppliedVisas])
 
     const handleSearch = () => {
         const inputCountry = document.getElementById('countryName').value.trim().toLowerCase()
@@ -43,20 +44,34 @@ export const MyVisaApplicationPage = () => {
     }
 
     return (
-        <div className="space-y-2 text-center px-3">
+        <div className="space-y-2 text-center min-h-screen px-3">
             <h1 className="font-black mt-7 text-sky-400 sm:text-lg">Applied Visas Dashboard</h1>
             <p className="px-4 text-gray-600 dark:text-gray-400 pt-1 text-[15px] sm:w-[420px] mx-auto pb-6">Easily view and manage your submitted visa applications in one convenient dashboard.</p>
 
-            <div className="flex flex-col w-40 mx-auto gap-1 pb-4">
-                <p className="text-xs text-start text-gray-500 mb-1 ">Enter Country Name</p>
-                <div className="flex items-center gap-2">
-                    <input onChange={handleInputChange} id="countryName" type="text" placeholder="Search" className="input input-bordered w-40 h-9" />
-                    <button onClick={handleSearch}>
-                        <IoMdSearch className="text-2xl cursor-pointer" />
-                    </button>
-                </div>
+            {
+                allAppliedVisas.length > 0 && <div className="flex flex-col w-40 mx-auto gap-1 pb-4">
+                    <p className="text-xs text-start text-gray-500 mb-1 ">Enter Country Name</p>
+                    <div className="flex items-center gap-2">
+                        <input onChange={handleInputChange} id="countryName" type="text" placeholder="Search" className="input input-bordered w-40 h-9" />
+                        <button onClick={handleSearch}>
+                            <IoMdSearch className="text-2xl cursor-pointer" />
+                        </button>
+                    </div>
 
-            </div>
+                </div>
+            }
+
+
+            {
+                allAppliedVisas.length == 0 && (<div className="flex items-center flex-col justify-center">
+
+                    <img className="w-72 mt-8" src="https://staticmania.cdn.prismic.io/staticmania/a8befbc0-90ae-4835-bf37-8cd1096f450f_Property+1%3DSearch_+Property+2%3DSm.svg" alt="" />
+                    <h3 className="font-bold text-lg">Nothing to show</h3>
+                </div>)
+
+
+            }
+
 
             <div className="flex gap-8 flex-col sm:flex-row flex-wrap justify-center items-center max-w-6xl mx-auto" >
                 {

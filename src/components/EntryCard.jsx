@@ -11,11 +11,11 @@ import { Checkbox, Label } from "flowbite-react";
 
 export const EntryCard = ({ visa }) => {
 
-    
 
-    
 
-    const { _id, Countryname, Countryimage, Visa_type, Processing_time, Fee, Validity, Application_method,Age_restriction,Required_documents,Description,icon_img,visaCreator } = visa
+
+
+    const { _id, Countryname, Countryimage, Visa_type, Processing_time, Fee, Validity, Application_method, Age_restriction, Required_documents, Description, icon_img, visaCreator } = visa
 
     const [visaType, setVisaType] = useState("")
     const [documents, setDocuments] = useState([])
@@ -56,10 +56,10 @@ export const EntryCard = ({ visa }) => {
         const Application_method = e.target.Application_method.value
 
 
-        const updateVisa = { Countryname, Countryimage, icon_img, Visa_type, Processing_time, Required_documents, Description, Age_restriction, Fee, Validity, Application_method,visaCreator }
+        const updateVisa = { Countryname, Countryimage, icon_img, Visa_type, Processing_time, Required_documents, Description, Age_restriction, Fee, Validity, Application_method, visaCreator }
 
 
-        fetch(`http://localhost:5000/visas/${_id}`, {
+        fetch(`https://travel-axis-server.vercel.app/visas/${_id}`, {
             method: "PUT",
             headers: {
                 "content-type": "application/json"
@@ -97,7 +97,7 @@ export const EntryCard = ({ visa }) => {
 
             if (result.isConfirmed) {
 
-                fetch(`http://localhost:5000/addedVisas/${_id}`, {
+                fetch(`https://travel-axis-server.vercel.app/addedVisas/${_id}`, {
                     method: 'DELETE'
                 })
                     .then(res => res.json())
@@ -160,7 +160,7 @@ export const EntryCard = ({ visa }) => {
 
             {/* update visa modal */}
             <dialog id={`${_id}`} className="modal  modal-bottom sm:modal-middle">
-                <form onSubmit={ handleUpdateVisa} className=" modal-box w-[320px] bg-white mx-auto mt-12 sm:w-[480px] text-start ">
+                <form onSubmit={handleUpdateVisa} className=" modal-box w-[320px] bg-white mx-auto mt-12 sm:w-[480px] text-start ">
                     <h2 className="text-Pink text-xl  md:text-2xl text-center mb-8 sm:mb-12 font-bold underline underline-offset-8 ">Update Visa</h2>
                     <div className="grid gap-6 mb-6 sm:grid-cols-2">
                         <div>
@@ -205,7 +205,7 @@ export const EntryCard = ({ visa }) => {
                             <input defaultValue={Application_method} name="Application_method" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="online/in-person" required />
                         </div>
                     </div>
-                    
+
                     <div className="mb-6">
                         <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-white sm:mb-5">Required Documents</label>
                         <div className="flex max-w-md flex-col gap-4" id="checkbox">

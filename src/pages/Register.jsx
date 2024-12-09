@@ -40,7 +40,7 @@ export const Register = () => {
                 updateUserProfile({ displayName: name, photoURL: photo })
                     .then(() => {
                         setUser(result.user);
-                        fetch("http://localhost:5000/newUser", {
+                        fetch("https://travel-axis-server.vercel.app/newUser", {
                             method: 'POST',
                             headers: {
                                 'content-type': 'application/json'
@@ -52,7 +52,7 @@ export const Register = () => {
                                 console.log(data)
                             })
 
-                            navigate(location?.state ? location.state : "/")
+                        navigate(location?.state ? location.state : "/")
                     })
                     .catch(error => {
                         console.log(error)
@@ -75,8 +75,8 @@ export const Register = () => {
 
                 const email = user.email
                 const displayName = user.displayName
-                const newUser = {email,displayName}
-                fetch("http://localhost:5000/newUser", {
+                const newUser = { email, displayName }
+                fetch("https://travel-axis-server.vercel.app/newUser", {
                     method: 'POST',
                     headers: {
                         'content-type': 'application/json'
@@ -87,8 +87,8 @@ export const Register = () => {
                     .then(data => {
                         console.log(data)
                     })
-                
-                    navigate(location?.state ? location.state : "/")
+
+                navigate(location?.state ? location.state : "/")
 
             })
             .catch((error) => {

@@ -1,9 +1,9 @@
 
 
 # :star: Travel-Axis
-![Project Banner](https://i.ibb.co.com/xjVhBDD/banner1.png)   
+![Project Banner](https://i.ibb.co.com/6nYPp2H/banner3.png)   
 ___
-## Live site :- [Travel-Axis](https://lingo-bingo-8776f.web.app/)
+## Live site :- [Travel-Axis](https://travel-axis-780d3.web.app/)
 
 ## :book: About the project:-
 > A user-friendly Visa Navigator Portal to simplify the process of
@@ -12,7 +12,8 @@ ___
 
 ## :rocket: Key Features:-
 - Authentication with Firebase.
-- Created Api endpoints with expressJS.
+- Handle routing with ReactRouter.
+- Dark Mode Feature
 - Integrated Mongodb database.
 - Implemented CRUD operations.
 
@@ -20,12 +21,12 @@ ___
 
 
 ## technology
-- Firebase
-- expressJS
+
 - React 
 - React Router
+- Firebase
+- expressJS
 - MongoDB
-- Tailwind
 - Daisy ui
 
 ## NPM Packages 

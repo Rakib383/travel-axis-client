@@ -36,12 +36,12 @@ const router = createBrowserRouter([
             {
                 path: "allVisas",
                 element: <PrivateRoute><AllVisasPage /></PrivateRoute>,
-                loader: () => fetch("http://localhost:5000/allVisas")
+                loader: () => fetch("https://travel-axis-server.vercel.app/allVisas")
             },
             {
                 path: "visas/:id",
                 element: <PrivateRoute><VisaDetailsPage /></PrivateRoute>,
-                loader: ({ params }) => fetch(`http://localhost:5000/visas/${params.id}`)
+                loader: ({ params }) => fetch(`https://travel-axis-server.vercel.app/visas/${params.id}`)
             },
             {
                 path: "myAppliedVisas",
