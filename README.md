@@ -27,7 +27,7 @@ ___
 - Firebase
 - expressJS
 - MongoDB
-- Daisy ui
+
 
 ## NPM Packages 
 
